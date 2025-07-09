@@ -154,10 +154,25 @@ const Products = () => {
                     </div>
                   )}
                 </div>
-                <div className="mt-4 text-xs sm:text-base">
-                  <h3 className="text-lg font-semibold">{slide.title}</h3>
-                  <p className="text-gray-500">{slide.location}</p>
-                </div>
+                <div className="mt-4 text-xs sm:text-base text-center">
+  <motion.h3
+    className="text-lg font-semibold"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: distance === 0 ? 1 : 0, y: distance === 0 ? 0 : 20 }}
+    transition={{ duration: 0.6, ease: "easeOut" }}
+  >
+    {slide.title}
+  </motion.h3>
+  <motion.p
+    className="text-gray-500"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: distance === 0 ? 1 : 0, y: distance === 0 ? 0 : 20 }}
+    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+  >
+    {slide.location}
+  </motion.p>
+</div>
+
               </motion.div>
             );
           })}

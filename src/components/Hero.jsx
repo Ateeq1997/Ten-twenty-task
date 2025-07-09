@@ -87,32 +87,33 @@ const Hero = () => {
         </div>
       </div>
 
-      <motion.div
-        key={index}
-        className="absolute top-1/2 left-6 sm:left-12 transform -translate-y-1/2 text-white max-w-xs sm:max-w-md z-10 px-4"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1 }}
-      >
-        <motion.p
-          className="text-xs sm:text-sm mb-1 sm:mb-2 opacity-70"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          Welcome To TenTwenty Farms
-        </motion.p>
+<motion.div
+  key={index}
+  className="absolute top-1/2 left-6 sm:left-12 transform -translate-y-1/2 text-white max-w-xs sm:max-w-md z-10 px-4"
+  initial={{ opacity: 0, y: 40 }}
+  animate={{ opacity: 1, y: 0 }}
+  exit={{ opacity: 0 }}
+  transition={{ duration: 1.8 }} // slowed down
+>
+  <motion.p
+    className="text-xs sm:text-sm mb-1 sm:mb-2 opacity-70"
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.6, duration: 1.4 }} // slower fade-in
+  >
+    Welcome To TenTwenty Farms
+  </motion.p>
 
-        <motion.h1
-          className="text-2xl sm:text-4xl md:text-6xl font-light leading-tight"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-        >
-          From Our Farms <br /> To Your Hands
-        </motion.h1>
-      </motion.div>
+  <motion.h1
+    className="text-2xl sm:text-4xl md:text-6xl font-light leading-tight"
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 1, duration: 1.6 }} // more delay and slower transition
+  >
+    From Our Farms <br /> To Your Hands
+  </motion.h1>
+</motion.div>
+
 
 <div className="absolute bottom-4 sm:bottom-8 left-6 sm:left-12 flex items-center gap-4 sm:gap-6 text-white text-[10px] sm:text-xs z-20">
   <div
