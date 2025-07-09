@@ -14,7 +14,7 @@ const Navbar = () => {
 
   return (
     <header className="absolute top-0 left-0 w-full z-50 py-4">
-      <div className="bg-white shadow-sm px-6 py-4 mx-auto max-w-[1200px] flex justify-between items-center">
+      <div className="bg-white shadow-sm px-6 py-4 mx-auto max-w-[1300px] flex justify-between items-center">
 
         {/* ====== Mobile View: Contact on Left ====== */}
         <div className="flex w-full items-center justify-between md:hidden">
