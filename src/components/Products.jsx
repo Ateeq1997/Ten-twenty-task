@@ -55,45 +55,43 @@ const Products = () => {
   };
 
   return (
-    <section className="w-full py-20 text-center overflow-hidden select-none">
+    <section className="w-full py-20 text-center overflow-hidden select-none px-4 sm:px-6 lg:px-8">
+      <motion.div
+        className="text-center py-20"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+        variants={{
+          hidden: {},
+          visible: {
+            transition: {
+              staggerChildren: 0.2,
+            },
+          },
+        }}
+      >
+        <motion.h2
+          className="text-2xl sm:text-3xl font-semibold mb-4"
+          variants={{
+            hidden: { opacity: 0, y: 40 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
+          Quality Products
+        </motion.h2>
 
-<motion.div
-  className="text-center py-20"
-  initial="hidden"
-  whileInView="visible"
-  viewport={{ once: false, amount: 0.3 }} // allows re-animation on scroll
-  variants={{
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  }}
->
-  <motion.h2
-    className="text-3xl font-semibold mb-4"
-    variants={{
-      hidden: { opacity: 0, y: 40 },
-      visible: { opacity: 1, y: 0 }
-    }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-  >
-    Quality Products
-  </motion.h2>
-
-  <motion.p
-    className="max-w-xl mx-auto text-gray-500"
-    variants={{
-      hidden: { opacity: 0, y: 30 },
-      visible: { opacity: 1, y: 0 }
-    }}
-    transition={{ duration: 0.8, delay: 0.2 }}
-  >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-  </motion.p>
-</motion.div>
-
+        <motion.p
+          className="max-w-xl mx-auto text-gray-500 text-sm sm:text-base"
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </motion.p>
+      </motion.div>
 
       <div className="relative h-[420px] w-full flex items-center justify-center cursor-grab">
         <motion.div
@@ -141,7 +139,7 @@ const Products = () => {
                 }}
                 transition={{ duration: 0.6, ease: "easeInOut" }}
               >
-                <div className="relative w-[280px] h-[360px] rounded-xl overflow-hidden shadow-xl group">
+                <div className="relative w-[200px] sm:w-[280px] h-[260px] sm:h-[360px] rounded-xl overflow-hidden shadow-xl group">
                   <img
                     src={slide.image}
                     alt={slide.title}
@@ -150,15 +148,15 @@ const Products = () => {
                   />
                   {distance === 0 && (
                     <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-                      <div className="bg-white w-16 h-16 rounded-full shadow flex items-center justify-center font-medium">
+                      <div className="bg-white w-12 h-12 sm:w-16 sm:h-16 rounded-full shadow flex items-center justify-center font-medium text-sm">
                         Drag
                       </div>
                     </div>
                   )}
                 </div>
-                <div className="mt-4">
+                <div className="mt-4 text-xs sm:text-base">
                   <h3 className="text-lg font-semibold">{slide.title}</h3>
-                  <p className="text-sm text-gray-500">{slide.location}</p>
+                  <p className="text-gray-500">{slide.location}</p>
                 </div>
               </motion.div>
             );
